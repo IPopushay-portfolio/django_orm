@@ -1,0 +1,74 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Продукты",
+        "description": "продукты питания"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Одежда",
+        "description": "одежда, верхняя, спортивная"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "prod_name": "Сыр",
+        "description": null,
+        "image": "",
+        "price": 300,
+        "created_at": "2025-01-28T19:29:04.648Z",
+        "updated_at": "2025-01-28T19:29:04.649Z",
+        "category": 1,
+        "status": "draft"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "prod_name": "Яблоки",
+        "description": null,
+        "image": "",
+        "price": 100,
+        "created_at": "2025-01-28T19:30:03.144Z",
+        "updated_at": "2025-01-28T19:30:03.144Z",
+        "category": 1,
+        "status": "draft"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "prod_name": "Платье",
+        "description": null,
+        "image": "",
+        "price": 5000,
+        "created_at": "2025-01-28T19:31:42.432Z",
+        "updated_at": "2025-01-28T19:31:42.432Z",
+        "category": 2,
+        "status": "draft"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+        "prod_name": "Костюм",
+        "description": null,
+        "image": "",
+        "price": 5000,
+        "created_at": "2025-01-28T19:32:13.746Z",
+        "updated_at": "2025-01-28T19:32:13.746Z",
+        "category": 2,
+        "status": "draft"
+    }
+}
+]
