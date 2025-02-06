@@ -1,57 +1,28 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
 from catalog.models import Product
+
+
+def home(request):
+    products = Product.objects.all()
+    context = {'products': products}
+    return render(request, 'catalog/home.html', context)
 
 
 def contacts(request):
     if request.method == "POST":
         name = request.POST.get("name")
         message = request.POST.get("message")
+        print(name)
+        print(message)
         return HttpResponse(f'Спасибо, {name}! Сообщение получено.')
-    return render(request, 'catalog/contacts.html')
+    return render(request, 'contacts.html')
 
 
-def home(request):
-    return render(request, 'catalog/home.html')
-
-
-def example_view(request):
-    return render(request, 'catalog/example.html')
-
-
-def index(request):
-    product = Product.objects.get(id=1)
-    context = {
-        'category': f'{product.category}',
-        'prod_name': f'{product.prod_name}',
-        'description': f'{product.description}',
-        'image': f'{product.image}',
-        'price': f'{product.price}'
-
-    }
-    return render(request, 'catalog/index.html', context)
-
-
-def product_detail(request):
-    product = Product.objects.get(id=1)
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
     context = {
 
         'product': product,
-
     }
-    return render(request, 'catalog/product_detail.html', context=context)
-
-
-def product_list(request):
-    product = Product.objects.all()
-    context = {"products": product}
-
-    return render(request, 'catalog/product_list.html', context)
-
-
-def base_test(request):
-    product = Product.objects.all()
-    context = {"products": product}
-
-    return render(request, 'catalog/base_test.html', context)
+    return render(request, 'product_detail.html', context)
