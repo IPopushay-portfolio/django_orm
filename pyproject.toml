@@ -24,10 +24,6 @@ black = "^24.10.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.flake8]
-# максимальная длина строки
-line_length = 119
-
 
 [tool.isort]
 # максимальная длина строки

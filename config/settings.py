@@ -13,10 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY= os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG= True if os.getenv('DEBUG') == 'True' else False
+DEBUG = True if os.getenv('DEBUG') == 'True' else False
 
 ALLOWED_HOSTS = []
 
@@ -75,9 +75,7 @@ DATABASES = {
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
         'HOST': os.getenv('POSTGRES_HOST'),
         'PORT': os.getenv('POSTGRES_PORT'),
-       # 'OPTIONS': {
-          #  "client_encoding": "utf8",
-       # },
+
         }
     }
 
@@ -118,9 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    ]
+
 
 media_url = 'media/'
 media_root = os.path.join(BASE_DIR, "media")
