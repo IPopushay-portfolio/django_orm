@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+{% block title %}Форма для статьи{% endblock %}
+{% load my_tags %}
+{% block content %}
+{% include 'blog/header.html' %}
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <img src="{{ blog.image|media_filter }}">
+                <h2>Добавить публикацию</h2>
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div>
+                    <button type="submit" class="btn btn-primary">
+                        {% if object %}
+                        Сохранить
+                        {% else %}
+                        Создать
+                        {% endif %}
+                    </button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
