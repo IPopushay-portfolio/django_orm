@@ -25,7 +25,6 @@ class Product(models.Model):
     views_counter = models.PositiveIntegerField(verbose_name='Счетчик просмотров', default=0,
                                                 help_text='Укажите количество просмотров')
 
-
     def __str__(self):
         return f'{self.prod_name} {self.description}'
 
